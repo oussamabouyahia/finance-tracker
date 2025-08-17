@@ -59,7 +59,7 @@ const Charts = ({ transactions }: ChartsProps) => {
               outerRadius={100}
               label
             >
-              {categoryData.map((entry, index) => (
+              {categoryData.map((_, index) => (
                 <Cell key={index} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
