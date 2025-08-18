@@ -1,3 +1,6 @@
+import { Button } from "../shared/Button";
+import Input from "../shared/Input";
+
 interface NewTransactionForm {
   type: string;
   category: string;
@@ -35,25 +38,23 @@ const AddTransaction = ({
           <option value="income">Income</option>
           <option value="expense">Expense</option>
         </select>
-        <input
+        <Input
           type="text"
           placeholder="Category"
           value={form.category}
           onChange={(e) => setForm({ ...form, category: e.target.value })}
-          className="border p-2 rounded"
         />
-        <input
+
+        <Input
           type="number"
           placeholder="Amount"
           value={form.amount}
           onChange={(e) => setForm({ ...form, amount: e.target.value })}
-          className="border p-2 rounded"
         />
-        <input
+        <Input
           type="date"
           value={form.date}
           onChange={(e) => setForm({ ...form, date: e.target.value })}
-          className="border p-2 rounded"
         />
         <input
           type="text"
@@ -62,19 +63,14 @@ const AddTransaction = ({
           onChange={(e) => setForm({ ...form, description: e.target.value })}
           className="border p-2 rounded col-span-2"
         />
-        <button
+
+        <Button
+          disabled={!disabled}
           type="submit"
-          className={`p-2 rounded col-span-2 font-medium transition
-                      ${
-                        disabled
-                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : "bg-blue-500 hover:bg-blue-600 text-white"
-                      }
-               `}
-          disabled={disabled}
+          variant={disabled ? "secondary" : "primary"}
         >
           Add
-        </button>
+        </Button>
       </form>
     </div>
   );

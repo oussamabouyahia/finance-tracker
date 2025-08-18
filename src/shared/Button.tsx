@@ -1,6 +1,6 @@
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
-  children: React.ReactNode | string;
+  children: React.ReactNode;
 }
 
 export function Button({
@@ -9,8 +9,10 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = {
-    primary: "bg-blue-600 text-white px-4 py-2",
-    secondary: "bg-gray-200 text-black px-4 py-2",
+    primary:
+      "rounded col-span-2 font-medium transition bg-blue-600 text-white px-4 py-2",
+    secondary:
+      " rounded col-span-2 font-medium transition bg-gray-200 text-black px-4 py-2",
   };
 
   return (
