@@ -48,7 +48,7 @@ const Charts = ({ transactions }: ChartsProps) => {
 
   return (
     <div className="grid grid-cols-2 gap-6">
-      <div className="bg-white p-4 rounded-lg shadow">
+      <div className=" p-4 rounded-lg shadow">
         <h3 className="font-semibold mb-2">Expenses by Category</h3>
         <ResponsiveContainer width="100%" height={250}>
           <PieChart>
