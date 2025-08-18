@@ -17,6 +17,12 @@ const AddTransaction = ({
   form,
   setForm,
 }: newTransactionProps) => {
+  const disabled = !(
+    Number(form.amount) > 0 &&
+    (form.type === "expense" || form.type === "income") &&
+    form.category &&
+    form.date
+  );
   return (
     <div className="bg-white p-4 rounded-lg shadow">
       <h3 className="font-semibold mb-2">Add Transaction</h3>
@@ -58,7 +64,14 @@ const AddTransaction = ({
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded col-span-2 hover:bg-blue-600"
+          className={`p-2 rounded col-span-2 font-medium transition
+                      ${
+                        disabled
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-blue-500 hover:bg-blue-600 text-white"
+                      }
+               `}
+          disabled={disabled}
         >
           Add
         </button>
