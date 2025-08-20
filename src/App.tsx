@@ -17,7 +17,7 @@ function App() {
   } = useTransaction();
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-6 ">
+    <div className="p-6 max-w-6xl mx-auto space-y-6 ">
       {/* Header */}
       <h1 className="text-3xl font-bold text-center">💰 Finance Tracker</h1>
 
